@@ -4,7 +4,6 @@ namespace Heise\Tests\Shariff;
 
 use GuzzleHttp\ClientInterface;
 use Heise\Shariff\Backend\Facebook;
-use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class FacebookTest
@@ -14,7 +13,7 @@ class FacebookTest extends \PHPUnit_Framework_TestCase
     public function testConfig()
     {
         /** @var ClientInterface|\PHPUnit_Framework_MockObject_MockObject $client */
-        $client = $this->getMockBuilder(ClientInterface::class)->getMock();
+        $client = $this->createMock(ClientInterface::class);
 
         $facebook = new Facebook($client);
         $facebook->setConfig(array('app_id' => 'foo', 'secret' => 'bar'));
@@ -24,7 +23,7 @@ class FacebookTest extends \PHPUnit_Framework_TestCase
     public function testUsesGraphApi()
     {
         /** @var \GuzzleHttp\Client|\PHPUnit_Framework_MockObject_MockObject $client */
-        $client = $this->getMockBuilder(ClientInterface::class)->getMock();
+        $client = $this->createMock(ClientInterface::class);
 
         $facebook = new Facebook($client);
         $facebook->setConfig(array('app_id' => 'foo', 'secret' => 'bar'));

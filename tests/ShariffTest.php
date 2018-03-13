@@ -91,7 +91,8 @@ class ShariffTest extends \PHPUnit_Framework_TestCase
 
     public function testCacheOptions()
     {
-        $this->setExpectedException(OutOfSpaceException::class);
+        $this->expectException(OutOfSpaceException::class);
+
         $shariff = new Backend(array(
             "domains"   => array('www.heise.de'),
             "cache"    => array(
