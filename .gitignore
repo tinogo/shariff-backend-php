@@ -1,5 +1,6 @@
 # Created by https://www.gitignore.io
 
+.idea
 build/
 shariff-backend-php.zip
 shariff-backend-php.tar.gz
